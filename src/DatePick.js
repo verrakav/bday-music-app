@@ -1,13 +1,11 @@
-import React from "react";
+import React, from "react";
+import DatePicker form 'react-datepicker';
 import ButtonSubmit from "./ButtonSubmit";
 
 function DatePick() {
   return (
-    <div className="left">
-      <label for="bday" className="wider">
-        Choose your bday
-      </label>
-      <input type="date" name="bday" className="wider" />
+    <div className="input-container">
+      <input type="date" name="bday" className="input-date" />
       <ButtonSubmit />
     </div>
   );

@@ -4,10 +4,10 @@ import React from "react";
 //currently a shell to have on the page
 function ListOfSongs(props) {
   return (
-    <div className="right">
-      <span>the songs go here</span>
+    <div>
+      <ul>{/* that's where the tracks get rendered */}</ul>
     </div>
   );
 }
 
-// export default ListOfSongs;
+export default ListOfSongs;

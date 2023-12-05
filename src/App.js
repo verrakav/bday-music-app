@@ -1,13 +1,12 @@
-import logo from "./logo.svg";
+import React from "react";
 import "./App.css";
-import DatePick from "./DatePick";
-// import ListOfSongs from "./ListOfSong";
+import ColumnWrapper from "./ColumnWrapper";
 
 function App() {
   return (
     <div className="App">
-      <DatePick />
-      {/* <ListOfSongs /> */}
+      <h1 className="heading">Songs from the Top</h1>
+      <ColumnWrapper />
     </div>
   );
 }

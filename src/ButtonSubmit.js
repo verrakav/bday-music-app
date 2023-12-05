@@ -5,8 +5,8 @@ function ButtonSubmit(props) {
     alert(`you're pushy`);
   }
   return (
-    <button id="submit" className="wider" onClick={handleEvent}>
-      Submit
+    <button id="submit" onClick={handleEvent} className="btn">
+      Add a bday
     </button>
   );
 }
