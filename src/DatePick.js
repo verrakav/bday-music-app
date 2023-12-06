@@ -1,29 +1,39 @@
 import React, { useState } from "react";
-import "react-datepicker/dist/react-datepicker.css"; /*will it work without? how?*/
-
-import DatePicker from "react-datepicker";
 import ButtonSubmit from "./ButtonSubmit";
 
 function DatePick() {
-  const [date, setDate] = useState(null);
-  const handleDateChange = (date) => setDate(date);
-  const currentYear = new Date().getFullYear();
-
+  //the two lines create state manager for the date
+  const [selectedDate, setDate] = useState("");
+  //and the list where the dates are stored
+  const [dateList, setDateList] = useState([]);
+  //the two functions below dealing with the date
+  const handleDateChange = (event) => setDate(event.target.value);
+  //and the list update
+  const handleSubmit = () => {
+    if (selectedDate) {
+      setDateList([
+        ...dateList /*appends the data list with a new one*/,
+        selectedDate,
+      ]);
+      setDate(""); /*clears the input field*/
+    }
+  };
   return (
     <div className="input-container">
-      {/* below is the imported component */}
-      <DatePicker
-        selected={date}
-        onChange={handleDateChange}
+      <input
+        type="date"
         className="input-date"
-        placeholderText="day/month/year"
-        // the stuff below limits the year selection
-        showYearDropdown={true}
-        yearDropdownItemNumber={100}
-        minDate={new Date("1940-01-01")}
-        maxDate={new Date(currentYear)}
+        value={selectedDate}
+        onChange={handleDateChange}
       />
-      <ButtonSubmit />
+      <ButtonSubmit onClick={handleSubmit} />
+      <ul className="friend-list">
+        {dateList.map((date, index) => (
+          <li key={index}>
+            friend #{index + 1}'s bday is: {date}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

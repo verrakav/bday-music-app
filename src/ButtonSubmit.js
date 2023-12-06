@@ -1,11 +1,8 @@
 import React from "react";
 
-function ButtonSubmit(props) {
-  function handleEvent(event) {
-    alert(`you're pushy`);
-  }
+function ButtonSubmit({ onClick }) {
   return (
-    <button id="submit" onClick={handleEvent} className="btn">
+    <button id="submit" onClick={onClick} type="button" className="btn">
       Add a bday
     </button>
   );
