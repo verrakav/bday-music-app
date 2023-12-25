@@ -10,7 +10,7 @@ function DatePick() {
   const handleDateChange = (event) => setDate(event.target.value);
   //and the list update
   const handleSubmit = () => {
-    if (selectedDate) {
+    if (selectedDate && dateList.length < 5) {
       setDateList([
         ...dateList /*appends the data list with a new one*/,
         selectedDate,
