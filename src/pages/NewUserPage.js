@@ -3,11 +3,15 @@ import Button from "../components/Button";
 
 function NewUserPage() {
   return (
-    <div>
-      <Button>existing user?</Button>
-      <h1 className="text-3xl font-bold underline">This is a new user page</h1>
-      <DatePickerCombined />
-      <Button>date submit</Button>
+    <div className="flex flex-row md:flex-row justify-around items-center ">
+      {/* <h1>This is a new user page</h1> */}
+      <div className="align center">
+        <Button>existing user?</Button>
+      </div>
+      <div className="align-center flex flex-col items-center">
+        <DatePickerCombined />
+        <Button>date submit</Button>
+      </div>
     </div>
   );
 }
