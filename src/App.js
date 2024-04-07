@@ -1,4 +1,5 @@
 import NewUserPage from "./pages/NewUserPage";
+import Button from "./components/Button";
 
 function App() {
   return (
@@ -7,7 +8,12 @@ function App() {
         Make your own bday playlist!
       </h1>
       <div className="container mx-auto m-16">
-        <NewUserPage />
+        <div className="flex flex-row md:flex-row justify-around items-center ">
+          <div className="align center">
+            <Button>existing user?</Button>
+          </div>
+          <NewUserPage />
+        </div>
       </div>
     </div>
   );
