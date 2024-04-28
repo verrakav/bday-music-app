@@ -14,13 +14,12 @@ test("it shows a date input and two buttons", () => {
   expect(buttons).toHaveLength(1);
 });
 
-test("it adds the chosen date on the left", async () => {
+test("it adds the chosen date (on the left)", async () => {
   //define mockup fnc
   const mockHandleDateSubmit = jest.fn();
   //render comp
   render(<NewUserPage onDateSubmit={mockHandleDateSubmit} />);
-  //find the elements
-  //find the button
+  //find the elements, find the button
   const button = screen.getAllByRole("button", { name: /date submit/i });
   //find the rendered list
   const renderedBdays = screen.getByRole("list");

@@ -10,7 +10,7 @@ function App() {
       <div className="container mx-auto m-16">
         <div className="flex flex-row md:flex-row justify-around items-center ">
           <div className="align center">
-            <Button>existing user?</Button>
+            <Button>existing playlist?</Button>
           </div>
           <NewUserPage />
         </div>
