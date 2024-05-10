@@ -1,3 +1,4 @@
 export default function DateList() {
-  return <div>DateList here</div>;
+  let renderedDates;
+  return <div>{renderedDates}</div>;
 }

@@ -1,22 +1,25 @@
-import DatePickerCombined from "../components/DatePickerCombined";
-import { useState } from "react";
+// import DatePickerCombined from "../components/DatePickerCombined";
+import DateInput from "../components/DateInput";
 import DateList from "../components/DateList";
 
-function NewUserPage() {
-  const [selectedDate, setSelectedDate] = useState(null);
+import { useState } from "react";
 
-  const handleDateChange = () => {
-    console.log(selectedDate.$d);
-  };
+function NewUserPage() {
+  const [selectedDates, setSelectedDate] = useState([]);
+  const [date, setDate] = useState();
 
   return (
     <div className="align-center flex flex-col items-center">
-      <DatePickerCombined
+      <DateInput
+        date={date}
+        setDate={setDate}
+      />
+      {/* <DatePickerCombined
         onDateSubmit={handleDateChange}
         setSelectedDate={setSelectedDate}
         selectedDate={selectedDate}
-      />
-      <DateList className="flex" />
+      /> */}
+      <DateList />
     </div>
   );
 }
