@@ -1,5 +1,5 @@
 import DatePickerCombined from "../components/DatePickerCombined";
-import { useState } from "react";
+import {useState} from "react";
 import DateList from "../components/DateList";
 
 function NewUserPage() {

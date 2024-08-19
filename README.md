@@ -4,7 +4,7 @@
 
 A playlist-generating app based on the dates picked by the users.
 
-## How to 
+## How to
 
 1. **Pick a date:** Every user pickes a date (intended to work based upon birthdays). The app supports up to 5 users.
 2. ...
@@ -21,7 +21,7 @@ A playlist-generating app based on the dates picked by the users.
 
 ### APIs:
 
-- API for fetching  data: ...
+- API for fetching data: ...
 
 ### Design Miscellaneous:
 
@@ -32,3 +32,8 @@ A playlist-generating app based on the dates picked by the users.
 ## About the Project
 
 A step forward with project planning & component design. ...
+
+##Dev Purposes (to dos):
+--setting up routing
+-- think about imports what has what
+-- review the tests
