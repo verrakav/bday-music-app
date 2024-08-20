@@ -18,6 +18,7 @@ A playlist-generating app based on the dates picked by the users.
 - **date picker:** https://mui.com/x/react-date-pickers/getting-started/#installation
 - **reactjs-popup:** [GitHub](https://github.com/yjose/reactjs-popup)
 - **icons:** [GitHub](https://github.com/coreui/coreui-icons-react)
+- **react-router** https://reactrouter.com/en/main
 
 ### APIs:
 
@@ -37,3 +38,4 @@ A step forward with project planning & component design. ...
 --setting up routing
 -- think about imports what has what
 -- review the tests
+-- cleanup the style

@@ -6,9 +6,12 @@ function NewUserPage() {
   const [selectedDate, setSelectedDate] = useState(null);
 
   return (
-    <div className="align-center flex flex-col items-center">
+    <div className="align-center flex flex-col items-center m-5">
       <DatePickerCombined />
-      <DateList className="flex" />
+      <DateList
+        className="flex"
+        date={selectedDate}
+      />
     </div>
   );
 }
