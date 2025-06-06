@@ -3,14 +3,15 @@ import { useState } from "react";
 
 export default function BdaysPicker() {
   const [bdays, setBdays] = useState<string[]>([]);
+  const [currentDate, setCurrentDate] = useState<string>("");
   const [message, setMessage] = useState<string>("");
 
   //  collects dates from the user
-  const handleAddDate = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleAddDate = (date: string) => {
     setBdays((prev) => {
       //  if there's no prev uses []
-      if (bdays.length <= 5) {
-        return [...(prev || []), e.target.value];
+      if (bdays.length < 5) {
+        return [...(prev || []), date];
       } else {
         return [...prev];
       }
@@ -30,8 +31,12 @@ export default function BdaysPicker() {
       <input
         type="date"
         min="1950-01-01"
-        value={bdays}
-        onChange={handleAddDate}
+        value={currentDate} // has to be a separate value as input date expects a string
+        onChange={(e) => {
+          const date = e.target.value;
+          setCurrentDate(date);
+          handleAddDate(date);
+        }}
       />
       <ul>
         {bdays.map((date, idx) => {
