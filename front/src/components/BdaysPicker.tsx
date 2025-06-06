@@ -1,5 +1,5 @@
 //  hooks
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function BdaysPicker() {
   const [bdays, setBdays] = useState<string[]>([]);
@@ -19,6 +19,11 @@ export default function BdaysPicker() {
     if (bdays.length === 5) setMessage("Enough bdays!");
   };
 
+  useEffect(() => {
+    if (bdays.length < 5) {
+      setMessage("");
+    }
+  }, [bdays]);
   // removes a date if not needed
   const handleRemoveDate = (dateIdx: number) => {
     const updatedDates = bdays.filter((_, idx) => idx !== dateIdx);
