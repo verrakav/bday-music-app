@@ -1,15 +1,10 @@
+import Header from "./components/Layout/Header";
+import Footer from "./components/Layout/Footer";
+
 function App() {
   return (
     <div className="flex flex-col justify-between min-h-screen w-full">
-      <header className="text-white bg-blue-900 py-4">
-        <div className="mx-auto px-4 flex justify-around items-center">
-          <h1 className="text-2xl font-semibold tracking-wider">BDAY Music</h1>
-          <div className="flex flex-row">
-            <div className="mx-2">USER ACC</div>
-            <div className="mx-2">LOG IN</div>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       <main className="w-full m-2 max-w-screen-xl mx-auto px-2">
         <div className="flex flex-col justify-between items-center bg-yellow-200">
@@ -28,13 +23,7 @@ function App() {
         </div>
       </main>
 
-      <div>
-        <footer className="text-white bg-blue-900 py-4 flex flex-col items-center">
-          <p>idea: namliw 2023</p>
-          <p>made: verrakav 2025</p>
-          <p>lol</p>
-        </footer>
-      </div>
+      <Footer />
     </div>
   );
 }
