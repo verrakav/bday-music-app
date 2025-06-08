@@ -20,9 +20,11 @@ A playlist-generating app based on the dates picked by the users.
 - **icons:** [GitHub](https://github.com/coreui/coreui-icons-react)
 - **react-router** https://reactrouter.com/en/main
 
-### APIs:
+### Architecture
 
-- API for fetching data: ...
+- Frontend makes calls the Express backend
+- Backend makes calls the Flask API
+- Flask API returns the data
 
 ### Design Miscellaneous:
 
