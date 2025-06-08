@@ -6,9 +6,24 @@ import cors from "cors";
 dotenv.config();
 
 const app = express();
+const PORT = 3001
 app.use(cors());
-app.use(express.json());
 
-app.get("", async(_req: Request, res: Response) => {
 
+app.get("chart/:date", async(req: Request, res: Response) => {
+    const date = req.params;
+    try {
+        const response = await fetch(`http://localhost:5000/top-song?date=${date}`)
+        const data = await response.json()
+        res.json(data)
+    } catch(err){
+        console.error("Failed to fetch from Python service: ", err);
+        res.status(500).json({error: "Server errror: failed to fetch the song"})
+    }
 })
+
+app.listen(PORT, ()=> {
+    console.log(`express server running on localhost:${PORT}`)
+})
+
+// 

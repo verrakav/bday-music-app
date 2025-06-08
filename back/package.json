@@ -1,10 +1,12 @@
 {
   "name": "back",
   "version": "1.0.0",
+  "type": "commonjs",
   "description": "backend for bday-music app",
   "main": "index.js",
   "scripts": {
-    "test": "run back test"
+    "test": "run back test",
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts"
   },
   "repository": {
     "type": "git",
