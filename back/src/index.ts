@@ -1,29 +1,29 @@
 import express, {Request, Response} from "express";
 import dotenv from "dotenv";
-import fetch from "node-fetch";
 import cors from "cors";
+import fetch from "node-fetch";
 
 dotenv.config();
 
 const app = express();
-const PORT = 3001
+const PORT = 3001;
 app.use(cors());
 
-
-app.get("chart/:date", async(req: Request, res: Response) => {
-    const date = req.params;
-    try {
-        const response = await fetch(`http://localhost:5000/top-song?date=${date}`)
-        const data = await response.json()
-        res.json(data)
-    } catch(err){
-        console.error("Failed to fetch from Python service: ", err);
-        res.status(500).json({error: "Server errror: failed to fetch the song"})
+app.get("/songs/:date", async(req: Request, res: Response) => {
+    const {date} = req.params
+    const response = await fetch(`https://musicbrainz.org/ws/2/recording?query=date:${date}&fmt=json`, {
+        method: 'GET'
+    })
+    if(!response.ok){
+        res.status(500).json({"mesage": "Failed to reach MusicBrainz"})
     }
+
+    const data = await response.json();
+    // console.log("DATA: ", data)
+    const result = data.recordings[3]
+    console.log(result)
 })
 
 app.listen(PORT, ()=> {
     console.log(`express server running on localhost:${PORT}`)
 })
-
-// 

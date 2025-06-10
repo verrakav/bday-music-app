@@ -1,1 +1,48 @@
 @import "tailwindcss";
+
+@theme {
+  --color-bg: hsl(var(--hue),90%,95%);
+  --color-fg: hsl(var(--hue),90%,5%);
+
+  @keyframes worm1 {
+    0% {
+      stroke-dashoffset: 0;
+    }
+    50% {
+      animation-timing-function: steps(1);
+      stroke-dashoffset: -358;
+    }
+    50.01% {
+      animation-timing-function: linear;
+      stroke-dashoffset: 358;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes worm2 {
+    0% {
+      stroke-dashoffset: 358;
+    }
+    50% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: -358;
+    }
+  }
+
+  --animate-worm1: worm1 2s linear infinite;
+  --animate-worm2: worm2 2s linear infinite;
+}
+
+
+
+:root {
+  --hue: 223;
+}
+html {
+  @apply h-screen m-0 p-0 box-border bg-[hsl(var(--hue),90%,95%)] text-[hsl(var(--hue),90%,5%)] transition-colors duration-300;
+  font-family: sans-serif;
+}

@@ -25,6 +25,7 @@
   "homepage": "https://github.com/verrakav/bday-music-app#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "csv-parser": "^3.2.0",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "node-fetch": "^3.3.2"

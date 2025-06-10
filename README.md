@@ -13,18 +13,11 @@ A playlist-generating app based on the dates picked by the users.
 
 **Miro board:** https://miro.com/app/board/uXjVKY0ZxdQ=/?share_link_id=147450124093
 
-### Libraries Used:
-
-- **date picker:** https://mui.com/x/react-date-pickers/getting-started/#installation
-- **reactjs-popup:** [GitHub](https://github.com/yjose/reactjs-popup)
-- **icons:** [GitHub](https://github.com/coreui/coreui-icons-react)
-- **react-router** https://reactrouter.com/en/main
-
 ### Architecture
 
 - Frontend makes calls the Express backend
-- Backend makes calls the Flask API
-- Flask API returns the data
+- Backend filters the dataset (API is no longer maintained)
+- Backend has the data and does a req to the Spotify API
 
 ### Design Miscellaneous:
 

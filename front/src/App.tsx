@@ -17,7 +17,8 @@ function App() {
             <BdaysPicker />
             {/* Right side */}
             <div className="flex flex-col w-1/3 bg-blue-400">
-              SOME ANIMATION GOING ON HERE
+              SOME ANIMATION GOING ON HERE / playlist
+              <button>SPOTIFY REQ</button>
             </div>
           </div>
         </div>

@@ -34,11 +34,11 @@ export default function BdaysPicker() {
   };
 
   //  NEW:
-  // const fetchASong = async (date) => {
-  const fetchASong = async () => {
-    const date = "2000-09-24";
-    console.log("FETCHING DATA");
-    const res = await fetch(`http://localhost:3001/chart:${date}`, {
+  const fetchASong = async (date: string) => {
+    // const fetchASong = async () => {
+    // const date = "2000-09-24";
+    console.log("FETCHING DATA for ", date);
+    const res = await fetch(`http://localhost:3001/songs/${date}`, {
       method: "GET",
     });
     const data = await res.json();
@@ -56,6 +56,7 @@ export default function BdaysPicker() {
           const date = e.target.value;
           setCurrentDate(date);
           handleAddDate(date);
+          // fetchASong(date);
         }}
       />
       <ul>
@@ -65,8 +66,8 @@ export default function BdaysPicker() {
               <p>{date}</p>
               <button
                 onClick={() => {
-                  fetchASong();
                   // handleRemoveDate(idx);
+                  fetchASong(date);
                 }}
               >
                 X
