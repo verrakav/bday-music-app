@@ -2,7 +2,7 @@
 //  components
 import Header from "./components/Layout/Header";
 import Footer from "./components/Layout/Footer";
-import BdaysPicker from "./components/BdaysPicker";
+import BdaysPicker from "./components/NamePicker";
 
 function App() {
   return (
